@@ -3,26 +3,26 @@
 
 #include <stdint.h>
 
-#define SEED_PID			0x01
-#define MANUF_SENTEC        0x01
-#define PRODUCT_SENTEC_DEFAULT 0x01
+#define SEED_PID		0x01
+#define MANUF_SENTEC		0x01
+#define PRODUCT_SENTEC_DEFAULT	0x01
 #define MESSAGE_BUF_SIZE	66
 #define MAX_FIFO_SIZE		66
-#define TRUE				1
-#define FALSE				0
+#define TRUE			1
+#define FALSE			0
 
-#define ADDR_FIFO			0x00
-#define ADDR_OPMODE			0x01	// Operating modes
+#define ADDR_FIFO		0x00
+#define ADDR_OPMODE		0x01	// Operating modes
 #define ADDR_REGDATAMODUL	0x02
 #define ADDR_FDEVMSB		0x05
 #define ADDR_FDEVLSB		0x06
-#define ADDR_FRMSB			0x07
-#define ADDR_FRMID			0x08
-#define ADDR_FRLSB			0x09
+#define ADDR_FRMSB		0x07
+#define ADDR_FRMID		0x08
+#define ADDR_FRLSB		0x09
 #define ADDR_AFCCTRL		0x0B
-#define ADDR_LNA			0x18
-#define ADDR_RXBW			0x19
-#define ADDR_AFCFEI			0x1E
+#define ADDR_LNA		0x18
+#define ADDR_RXBW		0x19
+#define ADDR_AFCFEI		0x1E
 #define ADDR_IRQFLAGS1		0x27
 #define ADDR_IRQFLAGS2		0x28
 #define ADDR_RSSITHRESH		0x29
@@ -52,13 +52,13 @@
 
 #define PARAM_JOIN_RESP		0x6A
 #define PARAM_JOIN_CMD		0xEA
-#define PARAM_POWER			0x70
+#define PARAM_POWER		0x70
 #define PARAM_REACTIVE_P	0x71
 
 #define PARAM_CURRENT		0x69
 #define PARAM_ACTUATE_SW	0xF3
 #define PARAM_FREQUENCY		0x66
-#define PARAM_TEST			0xAA
+#define PARAM_TEST		0xAA
 #define PARAM_SW_STATE		0x73
 #define PARAM_TEMP_SET		0xf4
 
@@ -67,70 +67,70 @@
 #define PARAM_TEMP_REPORT	0x74
 
 
-#define PARAM_CRC			0x00
+#define PARAM_CRC		0x00
 
-#define SIZE_MSGLEN			1
-#define SIZE_MANUF_ID       1
-#define SIZE_PRODID			1
+#define SIZE_MSGLEN		1
+#define SIZE_MANUF_ID		1
+#define SIZE_PRODID		1
 #define SIZE_ENCRYPTPIP		2
 #define SIZE_SENSORID		3
 #define SIZE_DATA_PARAMID	1
 #define SIZE_DATA_TYPEDESC	1
-#define SIZE_CRC			2
+#define SIZE_CRC		2
 
 /* Precise register description can be found on: 
  * www.hoperf.com/upload/rf/RFM69W-V1.3.pdf
  * on page 63 - 74
  */
-#define MODE_STANDBY 			0x04	// Standby
-#define MODE_TRANSMITER 		0x0C	// Transmiter
-#define MODE_RECEIVER 			0x10	// Receiver
+#define MODE_STANDBY		0x04	// Standby
+#define MODE_TRANSMITER		0x0C	// Transmiter
+#define MODE_RECEIVER		0x10	// Receiver
 #define VAL_REGDATAMODUL_FSK	0x00	// Modulation scheme FSK
 #define VAL_REGDATAMODUL_OOK	0x08	// Modulation scheme OOK
-#define VAL_FDEVMSB30			0x01	// frequency deviation 5kHz 0x0052 -> 30kHz 0x01EC
-#define VAL_FDEVLSB30			0xEC	// frequency deviation 5kHz 0x0052 -> 30kHz 0x01EC
-#define VAL_FRMSB434			0x6C	// carrier freq -> 434.3MHz 0x6C9333
-#define VAL_FRMID434			0x93	// carrier freq -> 434.3MHz 0x6C9333
-#define VAL_FRLSB434			0x33	// carrier freq -> 434.3MHz 0x6C9333
-#define VAL_FRMSB433			0x6C	// carrier freq -> 433.92MHz 0x6C7AE1
-#define VAL_FRMID433			0x7A	// carrier freq -> 433.92MHz 0x6C7AE1
-#define VAL_FRLSB433			0xE1	// carrier freq -> 433.92MHz 0x6C7AE1
-#define VAL_AFCCTRLS			0x00	// standard AFC routine
-#define VAL_AFCCTRLI			0x20	// improved AFC routine
-#define VAL_LNA50				0x08	// LNA input impedance 50 ohms
-#define VAL_LNA50G				0x0E	// LNA input impedance 50 ohms, LNA gain -> 48db
-#define VAL_LNA200				0x88	// LNA input impedance 200 ohms
-#define VAL_RXBW60				0x43	// channel filter bandwidth 10kHz -> 60kHz  page:26
-#define VAL_RXBW120				0x41	// channel filter bandwidth 120kHz
-#define VAL_AFCFEIRX			0x04	// AFC is performed each time RX mode is entered
-#define VAL_RSSITHRESH220		0xDC	// RSSI threshold 0xE4 -> 0xDC (220)
-#define VAL_PREAMBLELSB3		0x03	// preamble size LSB 3
-#define VAL_PREAMBLELSB5		0x05	// preamble size LSB 5
-#define VAL_SYNCCONFIG2			0x88	// Size of the Synch word = 2 (SyncSize + 1)
-#define VAL_SYNCCONFIG4			0x98	// Size of the Synch word = 4 (SyncSize + 1)
-#define VAL_SYNCVALUE1FSK		0x2D	// 1st byte of Sync word
-#define VAL_SYNCVALUE2FSK		0xD4	// 2nd byte of Sync word
-#define VAL_SYNCVALUE1OOK		0x80	// 1nd byte of Sync word
+#define VAL_FDEVMSB30		0x01	// frequency deviation 5kHz 0x0052 -> 30kHz 0x01EC
+#define VAL_FDEVLSB30		0xEC	// frequency deviation 5kHz 0x0052 -> 30kHz 0x01EC
+#define VAL_FRMSB434		0x6C	// carrier freq -> 434.3MHz 0x6C9333
+#define VAL_FRMID434		0x93	// carrier freq -> 434.3MHz 0x6C9333
+#define VAL_FRLSB434		0x33	// carrier freq -> 434.3MHz 0x6C9333
+#define VAL_FRMSB433		0x6C	// carrier freq -> 433.92MHz 0x6C7AE1
+#define VAL_FRMID433		0x7A	// carrier freq -> 433.92MHz 0x6C7AE1
+#define VAL_FRLSB433		0xE1	// carrier freq -> 433.92MHz 0x6C7AE1
+#define VAL_AFCCTRLS		0x00	// standard AFC routine
+#define VAL_AFCCTRLI		0x20	// improved AFC routine
+#define VAL_LNA50		0x08	// LNA input impedance 50 ohms
+#define VAL_LNA50G		0x0E	// LNA input impedance 50 ohms, LNA gain -> 48db
+#define VAL_LNA200		0x88	// LNA input impedance 200 ohms
+#define VAL_RXBW60		0x43	// channel filter bandwidth 10kHz -> 60kHz  page:26
+#define VAL_RXBW120		0x41	// channel filter bandwidth 120kHz
+#define VAL_AFCFEIRX		0x04	// AFC is performed each time RX mode is entered
+#define VAL_RSSITHRESH220	0xDC	// RSSI threshold 0xE4 -> 0xDC (220)
+#define VAL_PREAMBLELSB3	0x03	// preamble size LSB 3
+#define VAL_PREAMBLELSB5	0x05	// preamble size LSB 5
+#define VAL_SYNCCONFIG2		0x88	// Size of the Synch word = 2 (SyncSize + 1)
+#define VAL_SYNCCONFIG4		0x98	// Size of the Synch word = 4 (SyncSize + 1)
+#define VAL_SYNCVALUE1FSK	0x2D	// 1st byte of Sync word
+#define VAL_SYNCVALUE2FSK	0xD4	// 2nd byte of Sync word
+#define VAL_SYNCVALUE1OOK	0x80	// 1nd byte of Sync word
 #define VAL_PACKETCONFIG1FSK	0xA2	// Variable length, Manchester coding, Addr must match NodeAddress
-#define VAL_PACKETCONFIG1OOK	0		// Fixed length, no Manchester coding
-#define VAL_PAYLOADLEN255		0xFF	// max Length in RX, not used in Tx
-#define VAL_PAYLOADLEN64		0x40	// max Length in RX, not used in Tx
-#define VAL_PAYLOADLEN_OOK		(13 + 8 * 17)	// Payload Length
-#define VAL_NODEADDRESS01		0x04	// Node address used in address filtering
-#define VAL_FIFOTHRESH1			0x81	// Condition to start packet transmission: at least one byte in FIFO
-#define VAL_FIFOTHRESH30		0x1E	// Condition to start packet transmission: wait for 30 bytes in FIFO
+#define VAL_PACKETCONFIG1OOK	0	// Fixed length, no Manchester coding
+#define VAL_PAYLOADLEN255	0xFF	// max Length in RX, not used in Tx
+#define VAL_PAYLOADLEN64	0x40	// max Length in RX, not used in Tx
+#define VAL_PAYLOADLEN_OOK	(13 + 8 * 17)	// Payload Length
+#define VAL_NODEADDRESS01	0x04	// Node address used in address filtering
+#define VAL_FIFOTHRESH1		0x81	// Condition to start packet transmission: at least one byte in FIFO
+#define VAL_FIFOTHRESH30	0x1E	// Condition to start packet transmission: wait for 30 bytes in FIFO
 
-#define MSG_REMAINING_LEN 0
-#define MSG_MANUF_ID      1
-#define MSG_PRODUCT_ID    2
-#define MSG_RESERVED_HI   3
-#define MSG_RESERVED_LO   4
-#define MSG_SENSOR_ID_2   5
-#define MSG_SENSOR_ID_1   6
-#define MSG_SENSOR_ID_0   7
-#define MSG_DATA_START    8
-#define MSG_ENCR_START    MSG_SENSOR_ID_2
-#define MSG_OVERHEAD_LEN  (MSG_DATA_START+2)
+#define MSG_REMAINING_LEN	0
+#define MSG_MANUF_ID		1
+#define MSG_PRODUCT_ID		2
+#define MSG_RESERVED_HI		3
+#define MSG_RESERVED_LO		4
+#define MSG_SENSOR_ID_2		5
+#define MSG_SENSOR_ID_1		6
+#define MSG_SENSOR_ID_0		7
+#define MSG_DATA_START		8
+#define MSG_ENCR_START		MSG_SENSOR_ID_2
+#define MSG_OVERHEAD_LEN	(MSG_DATA_START+2)
 
 typedef struct regSet_t {
 	uint8_t addr;
